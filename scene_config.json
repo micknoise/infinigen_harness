@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "room_type": "Kitchen",
+  "single_room": true,
+  "terrain_enabled": false,
+  "fast_solve": true,
+  "solve_steps_large": 50,
+  "solve_steps_small": 50,
+  "restrict_parent": [],
+  "restrict_child_primary": [],
+  "restrict_child_secondary": [],
+  "extra_gin": [],
+  "floor_plan": null,
+  "export": {
+    "texture_resolution": 1024,
+    "decimate_ratio": 0.5
+  }
+}

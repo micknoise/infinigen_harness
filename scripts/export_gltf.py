@@ -22,6 +22,7 @@ import math
 import os
 import sys
 from pathlib import Path
+from mathutils import Matrix
 
 
 # ── Parse args ────────────────────────────────────────────────────────────────
@@ -50,6 +51,8 @@ def parse_args():
     parser.add_argument("--decimate-ratio", type=float, default=0.5)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--room-type", default="Unknown")
+    parser.add_argument("--start-index", type=int, default=0, help="Skip objects before this export index")
+    parser.add_argument("--skip-manifest", action="store_true", help="Export GLBs only and leave the manifest unchanged")
     a = parser.parse_args(argv)
 
     return {
@@ -60,6 +63,8 @@ def parse_args():
         "decimate_ratio": a.decimate_ratio,
         "seed": a.seed,
         "room_type": a.room_type,
+        "start_index": a.start_index,
+        "skip_manifest": a.skip_manifest,
     }
 
 
@@ -225,15 +230,44 @@ def sanitize_name(name):
     return safe
 
 
-def export_object_glb(obj, output_path):
-    """Export a single object as a .glb file."""
-    # Deselect all, select only this object (and children)
-    bpy.ops.object.select_all(action="DESELECT")
-    obj.select_set(True)
+def make_export_copy(obj, export_collection):
+    """Duplicate an object for export with its transform reset to identity.
 
-    # Also select child objects
-    for child in obj.children_recursive:
-        child.select_set(True)
+    The manifest carries each object's world-space transform for A-Frame, so the
+    exported GLB must remain in object-local space to avoid double-applying
+    placement in the browser.
+    """
+    export_obj = obj.copy()
+    export_obj.data = obj.data.copy()
+    export_obj.animation_data_clear()
+    export_obj.parent = None
+    export_collection.objects.link(export_obj)
+
+    export_obj.matrix_world = Matrix.Identity(4)
+    export_obj.location = (0.0, 0.0, 0.0)
+    export_obj.rotation_euler = (0.0, 0.0, 0.0)
+    export_obj.scale = (1.0, 1.0, 1.0)
+    export_obj.data.update()
+
+    return export_obj
+
+
+def cleanup_export_copy(export_obj, export_collection):
+    """Remove the temporary export object and its copied mesh data."""
+    mesh_data = export_obj.data
+    export_collection.objects.unlink(export_obj)
+    bpy.data.objects.remove(export_obj)
+    bpy.data.meshes.remove(mesh_data)
+
+
+def export_object_glb(obj, output_path, export_collection):
+    """Export a single object as a .glb file with local-space geometry."""
+    export_obj = make_export_copy(obj, export_collection)
+
+    # Deselect all, select only the temporary export copy
+    bpy.ops.object.select_all(action="DESELECT")
+    export_obj.select_set(True)
+    bpy.context.view_layer.objects.active = export_obj
 
     try:
         bpy.ops.export_scene.gltf(
@@ -249,9 +283,11 @@ def export_object_glb(obj, output_path):
         )
     except Exception as e:
         print(f"  Warning: glTF export failed for {obj.name}: {e}")
+        cleanup_export_copy(export_obj, export_collection)
         return False
 
     bpy.ops.object.select_all(action="DESELECT")
+    cleanup_export_copy(export_obj, export_collection)
     return True
 
 
@@ -308,6 +344,23 @@ def categorize_object(obj):
     return "Object"
 
 
+def should_export_object(obj):
+    """Return whether a Blender mesh object should be part of the scene export."""
+    collection_names = {collection.name for collection in obj.users_collection}
+
+    # Infinigen keeps portal cutters, room shell placeholders, and reusable door
+    # assembly source meshes in dedicated collections. They are helper geometry,
+    # not visible scene instances, and exporting them produces duplicate or
+    # blocking meshes in A-Frame.
+    for name in collection_names:
+        if name.startswith("placeholders:"):
+            return False
+        if "base_elements" in name:
+            return False
+
+    return True
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -318,6 +371,7 @@ def main():
     manifest_path = args["manifest"]
     tex_res = args["texture_resolution"]
     decimate_ratio = args["decimate_ratio"]
+    start_index = max(args["start_index"], 0)
 
     print(f"\n{'='*60}")
     print(f"  export_gltf.py")
@@ -344,6 +398,8 @@ def main():
     for obj in bpy.data.objects:
         if obj.type != "MESH":
             continue
+        if not should_export_object(obj):
+            continue
         # Skip objects that are too small to matter
         dims = obj.dimensions
         if max(dims) < 0.001:
@@ -353,8 +409,13 @@ def main():
     print(f"  Found {len(exportable)} mesh objects to export\n")
 
     manifest_objects = []
+    export_collection = bpy.data.collections.new("__aframe_export__")
+    bpy.context.scene.collection.children.link(export_collection)
 
     for i, obj in enumerate(exportable):
+        if i < start_index:
+            continue
+
         safe_name = sanitize_name(obj.name)
         glb_path = os.path.join(output_dir, f"{safe_name}.glb")
 
@@ -377,11 +438,11 @@ def main():
 
         # Export glb
         print(f"    Exporting: {safe_name}.glb")
-        success = export_object_glb(obj, glb_path)
+        success = export_object_glb(obj, glb_path, export_collection)
 
         if success:
-            # Record in manifest — note: use original Blender transforms,
-            # the glTF exporter handles Y-up conversion internally
+            # Record the original world transform for A-Frame placement. The
+            # temporary export copy is reset to identity before writing the GLB.
             loc = obj.matrix_world.to_translation()
             rot = obj.matrix_world.to_euler("XYZ")
             scl = obj.matrix_world.to_scale()
@@ -398,20 +459,26 @@ def main():
 
         print()
 
-    # Write manifest
-    manifest = {
-        "seed": args["seed"],
-        "room_type": args["room_type"],
-        "object_count": len(manifest_objects),
-        "objects": manifest_objects,
-    }
+    if not args["skip_manifest"]:
+        manifest = {
+            "seed": args["seed"],
+            "room_type": args["room_type"],
+            "object_count": len(manifest_objects),
+            "objects": manifest_objects,
+        }
 
-    os.makedirs(os.path.dirname(manifest_path) or ".", exist_ok=True)
-    with open(manifest_path, "w") as f:
-        json.dump(manifest, f, indent=2)
+        os.makedirs(os.path.dirname(manifest_path) or ".", exist_ok=True)
+        with open(manifest_path, "w") as f:
+            json.dump(manifest, f, indent=2)
 
-    print(f"\n  ✓ Exported {len(manifest_objects)} objects")
-    print(f"  ✓ Manifest written to {manifest_path}")
+    bpy.context.scene.collection.children.unlink(export_collection)
+    bpy.data.collections.remove(export_collection)
+
+    print(f"\n  ✓ Exported {len(exportable) - start_index} objects")
+    if args["skip_manifest"]:
+        print(f"  ✓ Manifest left unchanged: {manifest_path}")
+    else:
+        print(f"  ✓ Manifest written to {manifest_path}")
 
 
 if __name__ == "__main__":

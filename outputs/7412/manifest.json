@@ -43,7 +43,7 @@
         1.0
       ],
       "category": "Object",
-      "polygons": 128
+      "polygons": 64
     },
     {
       "name": "bathroom_0/0.floor",
@@ -85,7 +85,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 158
+      "polygons": 79
     },
     {
       "name": "bedroom_0/0.ceiling",
@@ -127,7 +127,7 @@
         1.0
       ],
       "category": "Furniture",
-      "polygons": 240
+      "polygons": 120
     },
     {
       "name": "bedroom_0/0.floor",
@@ -169,7 +169,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 374
+      "polygons": 231
     },
     {
       "name": "dining-room_0/0.ceiling",
@@ -211,7 +211,7 @@
         1.0
       ],
       "category": "Object",
-      "polygons": 170
+      "polygons": 84
     },
     {
       "name": "dining-room_0/0.floor",
@@ -253,7 +253,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 292
+      "polygons": 177
     },
     {
       "name": "kitchen_0/0.ceiling",
@@ -295,7 +295,7 @@
         1.0
       ],
       "category": "Object",
-      "polygons": 246
+      "polygons": 123
     },
     {
       "name": "kitchen_0/0.floor",
@@ -337,7 +337,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 284
+      "polygons": 142
     },
     {
       "name": "living-room_0/0.ceiling",
@@ -379,7 +379,7 @@
         1.0
       ],
       "category": "Object",
-      "polygons": 282
+      "polygons": 140
     },
     {
       "name": "living-room_0/0.floor",
@@ -421,7 +421,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 326
+      "polygons": 163
     },
     {
       "name": "PanelDoorFactory(5140517).spawn_asset(3)",
@@ -442,7 +442,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 3960
+      "polygons": 3920
     },
     {
       "name": "PanelDoorFactory(5447300).spawn_asset(0)",
@@ -463,7 +463,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 4180
+      "polygons": 4148
     },
     {
       "name": "PanelDoorFactory(5447300).spawn_asset(1)",
@@ -484,7 +484,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 4180
+      "polygons": 4148
     },
     {
       "name": "PanelDoorFactory(5447300).spawn_asset(2)",
@@ -505,7 +505,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 4180
+      "polygons": 4148
     },
     {
       "name": "PanelDoorFactory(5447300).spawn_asset(4)",
@@ -526,7 +526,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 4180
+      "polygons": 4148
     },
     {
       "name": "WindowFactory(65507).spawn_asset(0)",
@@ -547,7 +547,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 5346
+      "polygons": 5802
     },
     {
       "name": "WindowFactory(65507).spawn_asset(1)",
@@ -568,7 +568,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 472
+      "polygons": 416
     },
     {
       "name": "WindowFactory(65507).spawn_asset(2)",
@@ -589,7 +589,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 6009
+      "polygons": 7266
     },
     {
       "name": "WindowFactory(65507).spawn_asset(3)",
@@ -610,7 +610,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 154
+      "polygons": 134
     },
     {
       "name": "WindowFactory(65507).spawn_asset(8)",
@@ -631,7 +631,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 146
+      "polygons": 126
     },
     {
       "name": "WindowFactory(65507).spawn_asset(9)",
@@ -652,7 +652,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 244
+      "polygons": 212
     },
     {
       "name": "WindowFactory(73448).spawn_asset(10)",
@@ -673,7 +673,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 5818
+      "polygons": 7012
     },
     {
       "name": "WindowFactory(73448).spawn_asset(11)",
@@ -694,7 +694,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 1684
+      "polygons": 1428
     },
     {
       "name": "WindowFactory(73448).spawn_asset(12)",
@@ -715,7 +715,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 5616
+      "polygons": 6402
     },
     {
       "name": "WindowFactory(73448).spawn_asset(13)",
@@ -736,7 +736,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 138
+      "polygons": 118
     },
     {
       "name": "WindowFactory(73448).spawn_asset(14)",
@@ -757,7 +757,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 138
+      "polygons": 118
     },
     {
       "name": "WindowFactory(73448).spawn_asset(15)",
@@ -778,7 +778,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 138
+      "polygons": 118
     },
     {
       "name": "WindowFactory(73448).spawn_asset(4)",
@@ -799,7 +799,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 1684
+      "polygons": 1428
     },
     {
       "name": "WindowFactory(73448).spawn_asset(5)",
@@ -820,7 +820,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 138
+      "polygons": 118
     },
     {
       "name": "WindowFactory(73448).spawn_asset(6)",
@@ -841,7 +841,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 138
+      "polygons": 118
     },
     {
       "name": "WindowFactory(73448).spawn_asset(7)",
@@ -862,7 +862,7 @@
         1.0
       ],
       "category": "Architecture",
-      "polygons": 1424
+      "polygons": 1208
     }
   ]
 }

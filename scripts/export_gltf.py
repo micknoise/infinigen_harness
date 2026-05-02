@@ -105,19 +105,43 @@ def setup_bake_settings(resolution):
     bpy.context.scene.cycles.bake_type = "DIFFUSE"
 
 
+BAKE_UV_NAME = "__bake_uv__"
+
+
 def ensure_uv_map(obj):
-    """Ensure the object has a UV map; create one via smart project if not."""
+    """Create a dedicated UV layer for baking and make it active.
+
+    Infinigen objects often have pre-existing UV maps whose coverage is
+    degenerate for baking purposes (e.g. all UVs stacked at the same texel).
+    Always smart-project a fresh UV layer so every face is properly unfolded
+    and every texel in the bake image maps to a surface point.
+    """
     if obj.type != "MESH":
         return False
-    if len(obj.data.uv_layers) == 0:
-        bpy.context.view_layer.objects.active = obj
-        obj.select_set(True)
-        bpy.ops.object.mode_set(mode="EDIT")
-        bpy.ops.mesh.select_all(action="SELECT")
-        bpy.ops.uv.smart_project(island_margin=0.02)
-        bpy.ops.object.mode_set(mode="OBJECT")
-        obj.select_set(False)
+
+    bpy.context.view_layer.objects.active = obj
+    obj.select_set(True)
+
+    # Remove any stale bake UV layer from a previous run
+    if BAKE_UV_NAME in obj.data.uv_layers:
+        obj.data.uv_layers.remove(obj.data.uv_layers[BAKE_UV_NAME])
+
+    bake_uv = obj.data.uv_layers.new(name=BAKE_UV_NAME)
+    obj.data.uv_layers.active = bake_uv
+
+    bpy.ops.object.mode_set(mode="EDIT")
+    bpy.ops.mesh.select_all(action="SELECT")
+    bpy.ops.uv.smart_project(island_margin=0.02)
+    bpy.ops.object.mode_set(mode="OBJECT")
+
+    obj.select_set(False)
     return True
+
+
+def remove_bake_uv(obj):
+    """Remove the temporary bake UV layer after export."""
+    if obj.type == "MESH" and BAKE_UV_NAME in obj.data.uv_layers:
+        obj.data.uv_layers.remove(obj.data.uv_layers[BAKE_UV_NAME])
 
 
 def bake_object_material(obj, output_dir, resolution):
@@ -193,6 +217,49 @@ def bake_object_material(obj, output_dir, resolution):
                 nodes.remove(n)
 
     obj.select_set(False)
+
+    # Replace the object's materials with a single Principled BSDF that
+    # references the baked PNG maps. This is required for glTF export —
+    # Infinigen's procedural node graphs cannot be converted by the exporter,
+    # so without this step the exported GLBs have no textures in A-Frame.
+    if textures:
+        baked_mat = bpy.data.materials.new(name=f"{safe_name}__baked")
+        baked_mat.use_nodes = True
+        nodes = baked_mat.node_tree.nodes
+        links = baked_mat.node_tree.links
+        nodes.clear()
+
+        bsdf = nodes.new("ShaderNodeBsdfPrincipled")
+        out = nodes.new("ShaderNodeOutputMaterial")
+        links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+
+        # Map each channel to its Principled BSDF input
+        channel_inputs = {
+            "albedo":    ("Base Color",  "sRGB"),
+            "roughness": ("Roughness",   "Non-Color"),
+            "metallic":  ("Metallic",    "Non-Color"),
+            "normal":    (None,          "Non-Color"),   # needs NormalMap node
+        }
+        for suffix, bake_type, color_space in channels:
+            img_path = os.path.join(output_dir, f"{safe_name}_{suffix}.png")
+            if not os.path.exists(img_path):
+                continue
+            img = bpy.data.images.load(img_path)
+            img.colorspace_settings.name = color_space
+            tex = nodes.new("ShaderNodeTexImage")
+            tex.image = img
+
+            input_name, _ = channel_inputs[suffix]
+            if suffix == "normal":
+                normal_map = nodes.new("ShaderNodeNormalMap")
+                links.new(tex.outputs["Color"], normal_map.inputs["Color"])
+                links.new(normal_map.outputs["Normal"], bsdf.inputs["Normal"])
+            else:
+                links.new(tex.outputs["Color"], bsdf.inputs[input_name])
+
+        obj.data.materials.clear()
+        obj.data.materials.append(baked_mat)
+
     return textures
 
 
@@ -247,6 +314,17 @@ def make_export_copy(obj, export_collection):
     export_obj.location = (0.0, 0.0, 0.0)
     export_obj.rotation_euler = (0.0, 0.0, 0.0)
     export_obj.scale = (1.0, 1.0, 1.0)
+
+    # Ensure the bake UV is the only UV layer in the export copy so it becomes
+    # TEXCOORD_0 unambiguously. Infinigen objects often have their own UV layers
+    # at index 0; if __bake_uv__ is at index 1 the glTF exporter picks the wrong
+    # one, causing the baked atlas to be sampled with the wrong coordinates.
+    mesh = export_obj.data
+    if BAKE_UV_NAME in mesh.uv_layers:
+        for layer in [l for l in mesh.uv_layers if l.name != BAKE_UV_NAME]:
+            mesh.uv_layers.remove(layer)
+        mesh.uv_layers[BAKE_UV_NAME].name = "UVMap"
+
     export_obj.data.update()
 
     return export_obj
@@ -436,9 +514,17 @@ def main():
             new_polys = len(obj.data.polygons)
             print(f"    Decimated: {orig_polys} → {new_polys} polys")
 
+        # Ensure the bake UV layer is active so the GLB's TEXCOORD_0 matches the
+        # baked texture layout. Decimation can silently change the active layer.
+        if obj.type == "MESH" and BAKE_UV_NAME in obj.data.uv_layers:
+            obj.data.uv_layers.active = obj.data.uv_layers[BAKE_UV_NAME]
+
         # Export glb
         print(f"    Exporting: {safe_name}.glb")
         success = export_object_glb(obj, glb_path, export_collection)
+
+        # Remove the temporary bake UV layer now that it is committed to the GLB
+        remove_bake_uv(obj)
 
         if success:
             # Record the original world transform for A-Frame placement. The

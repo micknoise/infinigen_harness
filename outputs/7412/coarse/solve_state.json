@@ -58,8 +58,8 @@
                 }
             ],
             "tags": [
-                "Semantics(room)",
                 "SpecificObject(name='bathroom_0/0')",
+                "Semantics(room)",
                 "Semantics(bathroom)"
             ]
         },
@@ -121,9 +121,9 @@
                 }
             ],
             "tags": [
+                "SpecificObject(name='bedroom_0/0')",
                 "Semantics(room)",
-                "Semantics(bedroom)",
-                "SpecificObject(name='bedroom_0/0')"
+                "Semantics(bedroom)"
             ]
         },
         "dining-room_0/0": {
@@ -184,8 +184,8 @@
                 }
             ],
             "tags": [
-                "Semantics(room)",
                 "SpecificObject(name='dining-room_0/0')",
+                "Semantics(room)",
                 "Semantics(dining-room)"
             ]
         },
@@ -398,8 +398,8 @@
                 }
             ],
             "tags": [
-                "Semantics(room)",
                 "Semantics(kitchen)",
+                "Semantics(room)",
                 "SpecificObject(name='kitchen_0/0')"
             ]
         },

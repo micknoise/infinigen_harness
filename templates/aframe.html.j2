@@ -36,7 +36,7 @@
     <!-- Preload all object GLBs -->
     <a-assets timeout="30000">
       {% for obj in manifest.objects %}
-      <a-asset-item id="{{ obj.name | replace(' ', '_') | replace('/', '_') }}"
+      <a-asset-item id="{{ obj.name | sanitize_id }}"
                     src="{{ obj.file }}"></a-asset-item>
       {% endfor %}
     </a-assets>
@@ -47,8 +47,8 @@
     <!-- {{ cat }} -->
     {% for obj in manifest.objects if obj.category == cat %}
     <a-entity
-      id="{{ obj.name | replace(' ', '_') | replace('/', '_') }}"
-      gltf-model="#{{ obj.name | replace(' ', '_') | replace('/', '_') }}"
+      id="{{ obj.name | sanitize_id }}"
+      gltf-model="#{{ obj.name | sanitize_id }}"
       position="{{ obj.position[0] }} {{ obj.position[1] }} {{ obj.position[2] }}"
       rotation="{{ obj.rotation[0] }} {{ obj.rotation[1] }} {{ obj.rotation[2] }}"
       scale="{{ obj.scale[0] }} {{ obj.scale[1] }} {{ obj.scale[2] }}"

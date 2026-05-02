@@ -15,6 +15,7 @@ uses a built-in default template (no Jinja2 dependency required).
 import argparse
 import json
 import os
+import re
 import sys
 
 
@@ -62,15 +63,29 @@ DEFAULT_TEMPLATE = """<!DOCTYPE html>
 """
 
 
+def sanitize_id(name):
+    """Convert a Blender object name to a CSS-safe HTML id.
+
+    A-Frame resolves gltf-model="#id" via document.querySelector, so the id
+    must be a valid CSS identifier: only alphanumeric, hyphens, and underscores.
+    Dots, parentheses, and slashes found in real Infinigen object names would
+    otherwise break the CSS selector.
+    """
+    safe = name.replace(" ", "_").replace("/", "_").replace("\\", "_")
+    safe = "".join(c if c.isalnum() or c == "-" else "_" for c in safe)
+    safe = re.sub(r"_+", "_", safe).strip("_")
+    return safe
+
+
 def build_asset_tag(obj):
     """Build an <a-asset-item> tag for an object."""
-    obj_id = obj["name"].replace(" ", "_").replace("/", "_")
+    obj_id = sanitize_id(obj["name"])
     return f'      <a-asset-item id="{obj_id}" src="{obj["file"]}"></a-asset-item>'
 
 
 def build_entity_tag(obj):
     """Build an <a-entity> tag for an object."""
-    obj_id = obj["name"].replace(" ", "_").replace("/", "_")
+    obj_id = sanitize_id(obj["name"])
     pos = obj.get("position", [0, 0, 0])
     rot = obj.get("rotation", [0, 0, 0])
     scl = obj.get("scale", [1, 1, 1])
@@ -105,6 +120,7 @@ def build_with_jinja(manifest, template_path, output_path):
     template_dir = os.path.dirname(template_path)
     template_name = os.path.basename(template_path)
     env = Environment(loader=FileSystemLoader(template_dir))
+    env.filters["sanitize_id"] = sanitize_id
     template = env.get_template(template_name)
     html = template.render(manifest=manifest)
 

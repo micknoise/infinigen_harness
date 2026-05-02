@@ -25,5 +25,5 @@ Faces:52,867
 Tris:108,128
 Objects:0/45
 Duration: 00:00+01 (Frame 1/1)
-Memory: 64.9 MiB
+Memory: 66.3 MiB
 4.2.0

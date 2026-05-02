@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Infinigen Scene — Kitchen (seed 7412)</title>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7/dist/aframe-extras.min.js"></script>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    #info-panel {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      z-index: 1000;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="info-panel">
+    Kitchen | seed 7412 | 18 objects<br>
+    WASD to move · Mouse to look · Click to lock pointer
+  </div>
+
+  <a-scene
+    renderer="colorManagement: true; physicallyCorrectLights: true"
+    background="color: #1a1a2e"
+    vr-mode-ui="enabled: true"
+  >
+    <!-- Preload all object GLBs -->
+    <a-assets timeout="30000">
+      
+      <a-asset-item id="Floor_0"
+                    src="objects/Floor_0.glb"></a-asset-item>
+      
+      <a-asset-item id="Wall_N"
+                    src="objects/Wall_N.glb"></a-asset-item>
+      
+      <a-asset-item id="Wall_S"
+                    src="objects/Wall_S.glb"></a-asset-item>
+      
+      <a-asset-item id="Wall_E"
+                    src="objects/Wall_E.glb"></a-asset-item>
+      
+      <a-asset-item id="Wall_W"
+                    src="objects/Wall_W.glb"></a-asset-item>
+      
+      <a-asset-item id="Ceiling_0"
+                    src="objects/Ceiling_0.glb"></a-asset-item>
+      
+      <a-asset-item id="KitchenCounter_0"
+                    src="objects/KitchenCounter_0.glb"></a-asset-item>
+      
+      <a-asset-item id="KitchenCounter_1"
+                    src="objects/KitchenCounter_1.glb"></a-asset-item>
+      
+      <a-asset-item id="KitchenCounter_2"
+                    src="objects/KitchenCounter_2.glb"></a-asset-item>
+      
+      <a-asset-item id="Sink_0"
+                    src="objects/Sink_0.glb"></a-asset-item>
+      
+      <a-asset-item id="Oven_0"
+                    src="objects/Oven_0.glb"></a-asset-item>
+      
+      <a-asset-item id="Microwave_0"
+                    src="objects/Microwave_0.glb"></a-asset-item>
+      
+      <a-asset-item id="DiningTable_0"
+                    src="objects/DiningTable_0.glb"></a-asset-item>
+      
+      <a-asset-item id="Seating_0"
+                    src="objects/Seating_0.glb"></a-asset-item>
+      
+      <a-asset-item id="Seating_1"
+                    src="objects/Seating_1.glb"></a-asset-item>
+      
+      <a-asset-item id="Seating_2"
+                    src="objects/Seating_2.glb"></a-asset-item>
+      
+      <a-asset-item id="Seating_3"
+                    src="objects/Seating_3.glb"></a-asset-item>
+      
+      <a-asset-item id="Lighting_0"
+                    src="objects/Lighting_0.glb"></a-asset-item>
+      
+    </a-assets>
+
+    <!-- Scene objects by category -->
+    
+    
+    <!-- Architecture -->
+    
+    <a-entity
+      id="Floor_0"
+      gltf-model="#Floor_0"
+      position="0.0 0.0 0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="Wall_N"
+      gltf-model="#Wall_N"
+      position="0.0 1.5 -3.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="Wall_S"
+      gltf-model="#Wall_S"
+      position="0.0 1.5 3.0"
+      rotation="0.0 180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="Wall_E"
+      gltf-model="#Wall_E"
+      position="3.5 1.5 0.0"
+      rotation="0.0 -90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="Wall_W"
+      gltf-model="#Wall_W"
+      position="-3.5 1.5 0.0"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="Ceiling_0"
+      gltf-model="#Ceiling_0"
+      position="0.0 3.0 0.0"
+      rotation="180.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+
+    
+    <!-- KitchenCounter -->
+    
+    <a-entity
+      id="KitchenCounter_0"
+      gltf-model="#KitchenCounter_0"
+      position="-3.1 0.0 -1.8"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="KitchenCounter"
+    ></a-entity>
+    
+    <a-entity
+      id="KitchenCounter_1"
+      gltf-model="#KitchenCounter_1"
+      position="-3.1 0.0 0.0"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="KitchenCounter"
+    ></a-entity>
+    
+    <a-entity
+      id="KitchenCounter_2"
+      gltf-model="#KitchenCounter_2"
+      position="-3.1 0.0 1.8"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="KitchenCounter"
+    ></a-entity>
+    
+
+    
+    <!-- Sink -->
+    
+    <a-entity
+      id="Sink_0"
+      gltf-model="#Sink_0"
+      position="-3.0 0.9 0.0"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Sink"
+    ></a-entity>
+    
+
+    
+    <!-- Oven -->
+    
+    <a-entity
+      id="Oven_0"
+      gltf-model="#Oven_0"
+      position="-3.0 0.0 -1.8"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Oven"
+    ></a-entity>
+    
+
+    
+    <!-- Microwave -->
+    
+    <a-entity
+      id="Microwave_0"
+      gltf-model="#Microwave_0"
+      position="-2.8 1.4 1.8"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Microwave"
+    ></a-entity>
+    
+
+    
+    <!-- DiningTable -->
+    
+    <a-entity
+      id="DiningTable_0"
+      gltf-model="#DiningTable_0"
+      position="1.0 0.0 0.0"
+      rotation="0.0 15.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="DiningTable"
+    ></a-entity>
+    
+
+    
+    <!-- Seating -->
+    
+    <a-entity
+      id="Seating_0"
+      gltf-model="#Seating_0"
+      position="0.0 0.0 0.9"
+      rotation="0.0 180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Seating"
+    ></a-entity>
+    
+    <a-entity
+      id="Seating_1"
+      gltf-model="#Seating_1"
+      position="2.0 0.0 0.9"
+      rotation="0.0 180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Seating"
+    ></a-entity>
+    
+    <a-entity
+      id="Seating_2"
+      gltf-model="#Seating_2"
+      position="0.0 0.0 -0.9"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Seating"
+    ></a-entity>
+    
+    <a-entity
+      id="Seating_3"
+      gltf-model="#Seating_3"
+      position="2.0 0.0 -0.9"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Seating"
+    ></a-entity>
+    
+
+    
+    <!-- Lighting -->
+    
+    <a-entity
+      id="Lighting_0"
+      gltf-model="#Lighting_0"
+      position="0.0 2.9 0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Lighting"
+    ></a-entity>
+    
+
+    
+
+    <!-- Lighting -->
+    <a-entity light="type: ambient; color: #ffffff; intensity: 0.4"></a-entity>
+    <a-entity light="type: directional; color: #ffffff; intensity: 0.8"
+              position="2 4 1"
+              light="castShadow: true; shadowMapWidth: 2048; shadowMapHeight: 2048">
+    </a-entity>
+    <a-entity light="type: point; color: #ffeedd; intensity: 0.3; distance: 10"
+              position="0 2.5 0">
+    </a-entity>
+
+    <!-- Camera rig with WASD movement -->
+    <a-entity id="rig" position="0 1.6 3">
+      <a-entity camera
+                look-controls="pointerLockEnabled: true"
+                wasd-controls="acceleration: 20">
+      </a-entity>
+    </a-entity>
+  </a-scene>
+</body>
+</html>

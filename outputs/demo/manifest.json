@@ -1,0 +1,169 @@
+{
+  "seed": 7412,
+  "room_type": "Kitchen",
+  "object_count": 18,
+  "objects": [
+    {
+      "name": "Floor_0",
+      "file": "objects/Floor_0.glb",
+      "position": [0.0, 0.0, 0.0],
+      "rotation": [0.0, 0.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Architecture",
+      "polygons": 2
+    },
+    {
+      "name": "Wall_N",
+      "file": "objects/Wall_N.glb",
+      "position": [0.0, 1.5, -3.0],
+      "rotation": [0.0, 0.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Architecture",
+      "polygons": 4
+    },
+    {
+      "name": "Wall_S",
+      "file": "objects/Wall_S.glb",
+      "position": [0.0, 1.5, 3.0],
+      "rotation": [0.0, 180.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Architecture",
+      "polygons": 4
+    },
+    {
+      "name": "Wall_E",
+      "file": "objects/Wall_E.glb",
+      "position": [3.5, 1.5, 0.0],
+      "rotation": [0.0, -90.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Architecture",
+      "polygons": 4
+    },
+    {
+      "name": "Wall_W",
+      "file": "objects/Wall_W.glb",
+      "position": [-3.5, 1.5, 0.0],
+      "rotation": [0.0, 90.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Architecture",
+      "polygons": 4
+    },
+    {
+      "name": "Ceiling_0",
+      "file": "objects/Ceiling_0.glb",
+      "position": [0.0, 3.0, 0.0],
+      "rotation": [180.0, 0.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Architecture",
+      "polygons": 2
+    },
+    {
+      "name": "KitchenCounter_0",
+      "file": "objects/KitchenCounter_0.glb",
+      "position": [-3.1, 0.0, -1.8],
+      "rotation": [0.0, 90.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "KitchenCounter",
+      "polygons": 14230
+    },
+    {
+      "name": "KitchenCounter_1",
+      "file": "objects/KitchenCounter_1.glb",
+      "position": [-3.1, 0.0, 0.0],
+      "rotation": [0.0, 90.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "KitchenCounter",
+      "polygons": 13870
+    },
+    {
+      "name": "KitchenCounter_2",
+      "file": "objects/KitchenCounter_2.glb",
+      "position": [-3.1, 0.0, 1.8],
+      "rotation": [0.0, 90.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "KitchenCounter",
+      "polygons": 15100
+    },
+    {
+      "name": "Sink_0",
+      "file": "objects/Sink_0.glb",
+      "position": [-3.0, 0.9, 0.0],
+      "rotation": [0.0, 90.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Sink",
+      "polygons": 6540
+    },
+    {
+      "name": "Oven_0",
+      "file": "objects/Oven_0.glb",
+      "position": [-3.0, 0.0, -1.8],
+      "rotation": [0.0, 90.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Oven",
+      "polygons": 8921
+    },
+    {
+      "name": "Microwave_0",
+      "file": "objects/Microwave_0.glb",
+      "position": [-2.8, 1.4, 1.8],
+      "rotation": [0.0, 90.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Microwave",
+      "polygons": 5430
+    },
+    {
+      "name": "DiningTable_0",
+      "file": "objects/DiningTable_0.glb",
+      "position": [1.0, 0.0, 0.0],
+      "rotation": [0.0, 15.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "DiningTable",
+      "polygons": 9840
+    },
+    {
+      "name": "Seating_0",
+      "file": "objects/Seating_0.glb",
+      "position": [0.0, 0.0, 0.9],
+      "rotation": [0.0, 180.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Seating",
+      "polygons": 7210
+    },
+    {
+      "name": "Seating_1",
+      "file": "objects/Seating_1.glb",
+      "position": [2.0, 0.0, 0.9],
+      "rotation": [0.0, 180.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Seating",
+      "polygons": 7180
+    },
+    {
+      "name": "Seating_2",
+      "file": "objects/Seating_2.glb",
+      "position": [0.0, 0.0, -0.9],
+      "rotation": [0.0, 0.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Seating",
+      "polygons": 7310
+    },
+    {
+      "name": "Seating_3",
+      "file": "objects/Seating_3.glb",
+      "position": [2.0, 0.0, -0.9],
+      "rotation": [0.0, 0.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Seating",
+      "polygons": 7090
+    },
+    {
+      "name": "Lighting_0",
+      "file": "objects/Lighting_0.glb",
+      "position": [0.0, 2.9, 0.0],
+      "rotation": [0.0, 0.0, 0.0],
+      "scale": [1.0, 1.0, 1.0],
+      "category": "Lighting",
+      "polygons": 3210
+    }
+  ]
+}

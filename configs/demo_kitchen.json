@@ -1,0 +1,17 @@
+{
+  "seed": 7412,
+  "room_type": "Kitchen",
+  "single_room": true,
+  "terrain_enabled": false,
+  "fast_solve": true,
+  "solve_steps_large": 50,
+  "solve_steps_small": 50,
+  "restrict_parent": [],
+  "restrict_child_primary": ["KitchenCounter", "KitchenIsland", "Seating", "DiningTable", "Lighting"],
+  "restrict_child_secondary": ["Sink", "Oven", "Microwave", "Utensils", "FoodItem", "Vase"],
+  "extra_gin": [],
+  "export": {
+    "texture_resolution": 512,
+    "decimate_ratio": 0.4
+  }
+}

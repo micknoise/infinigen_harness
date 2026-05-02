@@ -10,18 +10,21 @@ This harness bridges **Infinigen** (procedural 3D scene generation) and **A-Fram
 
 ```bash
 # Full pipeline: Infinigen → Blender export → A-Frame HTML
-./generate.sh --config scene_config.json
+./scripts/generate.sh --config configs/scene_config.json
 
 # Partial pipeline flags
-./generate.sh --config scene_config.json --skip-export   # reuse existing .blend
-./generate.sh --config scene_config.json --skip-aframe   # stop after export
-./generate.sh --config scene_config.json --export-only   # skip Infinigen generation
+./scripts/generate.sh --config configs/scene_config.json --skip-export   # reuse existing .blend
+./scripts/generate.sh --config configs/scene_config.json --skip-aframe   # stop after export
+./scripts/generate.sh --config configs/scene_config.json --export-only   # skip Infinigen generation
 
 # Re-export with different settings (no re-generation)
-./export.sh --blend outputs/42/coarse/scene.blend --output outputs/42 --texture-resolution 512
+./scripts/export.sh --blend outputs/42/coarse/scene.blend --output outputs/42 --texture-resolution 512
+
+# Stage 3 only (useful for testing without Infinigen/Blender)
+python3 scripts/build_aframe.py --manifest outputs/42/manifest.json --template templates/aframe.html.j2 --output outputs/42/index.html
 
 # View the generated scene
-cd outputs/42 && python -m http.server 8000
+python3 -m http.server 8000 --directory outputs/42
 ```
 
 There is no build step, test suite, or linter. The harness is script-based.
@@ -44,16 +47,26 @@ scene_config.json
 
 Each stage consumes the previous stage's output. Stages can be run independently using the flags above.
 
+## Directory layout
+
+```
+scripts/          generate.sh, export.sh, export_gltf.py, build_aframe.py
+templates/        aframe.html.j2
+configs/          scene_config.json, room_types.json, demo_kitchen.json
+outputs/{seed}/   manifest.json, index.html, objects/*.glb
+```
+
 ## Key files and their roles
 
 | File | Role |
 |------|------|
-| `generate.sh` | Orchestrator: parses config, calls all three stages |
-| `export_gltf.py` | **Runs inside Blender's Python** — bakes PBR textures, decimates geometry, exports per-object .glb, writes manifest.json |
-| `build_aframe.py` | Reads manifest.json, renders index.html via Jinja2 template (with built-in fallback) |
-| `aframe.html.j2` | Jinja2 template for the A-Frame scene |
-| `scene_config.json` | User-facing input spec |
-| `room_types.json` | Reference taxonomy (room types, object tags, gin config names) — not executed |
+| `scripts/generate.sh` | Orchestrator: parses config, calls all three stages |
+| `scripts/export_gltf.py` | **Runs inside Blender's Python** — bakes PBR textures, decimates geometry, exports per-object .glb, writes manifest.json |
+| `scripts/build_aframe.py` | Reads manifest.json, renders index.html via Jinja2 template (with built-in fallback) |
+| `templates/aframe.html.j2` | Jinja2 template for the A-Frame scene |
+| `configs/scene_config.json` | Default scene spec |
+| `configs/demo_kitchen.json` | Demo config (seed 7412, kitchen) |
+| `configs/room_types.json` | Reference taxonomy (room types, object tags, gin config names) — not executed |
 | `AGENT_GUIDE.md` | LLM workflow documentation, field reference, limitations |
 
 ## Critical runtime constraints

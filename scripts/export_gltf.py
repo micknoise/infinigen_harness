@@ -24,42 +24,42 @@ import sys
 from pathlib import Path
 
 
-# ── Parse args after "--" ─────────────────────────────────────────────────────
+# ── Parse args ────────────────────────────────────────────────────────────────
 
 def parse_args():
-    """Parse arguments passed after -- in the blender command line."""
-    argv = sys.argv
-    if "--" not in argv:
-        return {
-            "blend": "",
-            "output_dir": "objects",
-            "manifest": "manifest.json",
-            "texture_resolution": 1024,
-            "decimate_ratio": 0.5,
-            "seed": 0,
-            "room_type": "Unknown",
-        }
+    """Parse arguments.
 
-    argv = argv[argv.index("--") + 1:]
-    args = {}
-    i = 0
-    while i < len(argv):
-        key = argv[i].lstrip("-").replace("-", "_")
-        if i + 1 < len(argv) and not argv[i + 1].startswith("-"):
-            args[key] = argv[i + 1]
-            i += 2
-        else:
-            args[key] = True
-            i += 1
+    Supports two calling conventions:
+      - Direct Python:  python export_gltf.py --blend scene.blend ...
+      - Blender mode:   blender --bg --python export_gltf.py -- --blend scene.blend ...
+    """
+    import argparse
+
+    argv = sys.argv
+    # Blender passes script args after "--"; strip Blender's own args first
+    if "--" in argv:
+        argv = argv[argv.index("--") + 1:]
+    else:
+        argv = argv[1:]  # strip the script name
+
+    parser = argparse.ArgumentParser(description="Export .blend to per-object glTF")
+    parser.add_argument("--blend", default="", help="Path to .blend file")
+    parser.add_argument("--output-dir", default="objects", help="Output directory for .glb files")
+    parser.add_argument("--manifest", default="manifest.json", help="Output manifest path")
+    parser.add_argument("--texture-resolution", type=int, default=1024)
+    parser.add_argument("--decimate-ratio", type=float, default=0.5)
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--room-type", default="Unknown")
+    a = parser.parse_args(argv)
 
     return {
-        "blend": args.get("blend", ""),
-        "output_dir": args.get("output_dir", "objects"),
-        "manifest": args.get("manifest", "manifest.json"),
-        "texture_resolution": int(args.get("texture_resolution", 1024)),
-        "decimate_ratio": float(args.get("decimate_ratio", 0.5)),
-        "seed": int(args.get("seed", 0)),
-        "room_type": args.get("room_type", "Unknown"),
+        "blend": a.blend,
+        "output_dir": a.output_dir,
+        "manifest": a.manifest,
+        "texture_resolution": a.texture_resolution,
+        "decimate_ratio": a.decimate_ratio,
+        "seed": a.seed,
+        "room_type": a.room_type,
     }
 
 

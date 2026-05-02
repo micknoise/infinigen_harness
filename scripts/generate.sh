@@ -18,6 +18,8 @@ SKIP_GENERATE=false
 SKIP_EXPORT=false
 SKIP_AFRAME=false
 OUTPUT_BASE="${HARNESS_ROOT}/outputs"
+CONDA_ENV="${CONDA_ENV:-infinigen}"
+PYTHON="conda run --no-capture-output -n ${CONDA_ENV} python"
 
 # ── Parse args ────────────────────────────────────────────────────────────────
 while [[ $# -gt 0 ]]; do
@@ -27,8 +29,9 @@ while [[ $# -gt 0 ]]; do
     --export-only)  SKIP_GENERATE=true; shift ;;
     --skip-export)  SKIP_EXPORT=true; shift ;;
     --skip-aframe)  SKIP_AFRAME=true; shift ;;
+    --conda-env)    CONDA_ENV="$2"; PYTHON="conda run --no-capture-output -n ${CONDA_ENV} python"; shift 2 ;;
     --help)
-      echo "Usage: $0 --config <scene_config.json> [--output <dir>] [--export-only] [--skip-export] [--skip-aframe]"
+      echo "Usage: $0 --config <scene_config.json> [--output <dir>] [--conda-env <name>] [--export-only] [--skip-export] [--skip-aframe]"
       exit 0 ;;
     *) echo "Unknown arg: $1"; exit 1 ;;
   esac
@@ -54,7 +57,7 @@ for key in '$1'.split('.'):
         val = '$2'
         break
 if isinstance(val, bool):
-    print(str(val).lower())
+    print(str(val).lower())  # lowercase true/false for shell comparisons
 elif isinstance(val, list):
     print(json.dumps(val))
 else:
@@ -87,6 +90,7 @@ echo "  Infinigen → A-Frame Harness"
 echo "  Seed:      ${SEED}"
 echo "  Room:      ${ROOM_TYPE}"
 echo "  Output:    ${OUTPUT_DIR}"
+echo "  Conda env: ${CONDA_ENV}"
 echo "════════════════════════════════════════════════════════════════"
 
 # ── Stage 1: Infinigen scene generation ───────────────────────────────────────
@@ -96,28 +100,29 @@ if [[ "$SKIP_GENERATE" == "false" ]]; then
 
   mkdir -p "$COARSE_DIR"
 
-  # Build gin config list
-  GIN_CONFIGS=""
+  # Build gin config list (always include at least base_indoors via the base.gin default)
+  GIN_CONFIGS="base_indoors.gin"
   if [[ "$FAST_SOLVE" == "true" ]]; then
-    GIN_CONFIGS="fast_solve.gin"
+    GIN_CONFIGS="${GIN_CONFIGS} fast_solve.gin"
   fi
   if [[ "$SINGLE_ROOM" == "true" ]]; then
     GIN_CONFIGS="${GIN_CONFIGS} singleroom.gin"
   fi
 
-  # Build -p overrides
-  GIN_PARAMS="compose_indoors.terrain_enabled=${TERRAIN}"
-  GIN_PARAMS="${GIN_PARAMS} restrict_solving.restrict_parent_rooms=[\\\"${ROOM_TYPE}\\\"]"
+  # Build -p overrides (gin requires Python-style True/False not lowercase)
+  # Use Python to capitalise booleans: true→True, false→False
+  GIN_TERRAIN=$(python3 -c "print(str('${TERRAIN}' == 'true'))")
+  GIN_PARAMS="compose_indoors.terrain_enabled=${GIN_TERRAIN}"
+  GIN_PARAMS="${GIN_PARAMS} restrict_solving.restrict_parent_rooms=['${ROOM_TYPE}']"
   GIN_PARAMS="${GIN_PARAMS} compose_indoors.solve_steps_large=${STEPS_LARGE}"
   GIN_PARAMS="${GIN_PARAMS} compose_indoors.solve_steps_small=${STEPS_SMALL}"
 
   # Optional: restrict object types
   if [[ "$RESTRICT_PRIMARY" != "[]" ]]; then
-    # Convert JSON array to Gin format: ["A","B"] → [\"A\",\"B\"]
     GIN_PRIMARY=$(python3 -c "
 import json
 items = json.loads('${RESTRICT_PRIMARY}')
-print('[' + ','.join(['\\\\\"' + i + '\\\\\"' for i in items]) + ']')
+print('[' + ','.join([\"'\" + i + \"'\" for i in items]) + ']')
 ")
     GIN_PARAMS="${GIN_PARAMS} restrict_solving.restrict_child_primary=${GIN_PRIMARY}"
   fi
@@ -126,7 +131,7 @@ print('[' + ','.join(['\\\\\"' + i + '\\\\\"' for i in items]) + ']')
     GIN_SECONDARY=$(python3 -c "
 import json
 items = json.loads('${RESTRICT_SECONDARY}')
-print('[' + ','.join(['\\\\\"' + i + '\\\\\"' for i in items]) + ']')
+print('[' + ','.join([\"'\" + i + \"'\" for i in items]) + ']')
 ")
     GIN_PARAMS="${GIN_PARAMS} restrict_solving.restrict_child_secondary=${GIN_SECONDARY}"
   fi
@@ -150,8 +155,9 @@ print(' '.join(items))
   echo "  Gin params:  ${GIN_PARAMS}"
   echo ""
 
-  # Run Infinigen
-  python -m infinigen_examples.generate_indoors \
+  # Run Infinigen via conda env
+  # shellcheck disable=SC2086  # word-splitting of GIN_CONFIGS and GIN_PARAMS is intentional
+  $PYTHON -m infinigen_examples.generate_indoors \
     --seed "$SEED" \
     --task coarse \
     --output_folder "$COARSE_DIR" \
@@ -168,29 +174,24 @@ if [[ "$SKIP_EXPORT" == "false" ]]; then
 
   mkdir -p "$OBJECTS_DIR"
 
-  # Find blender executable (Infinigen installs it)
-  BLENDER_BIN=""
-  if command -v blender &>/dev/null; then
-    BLENDER_BIN="blender"
-  elif [[ -x "$(python3 -c 'import infinigen; import os; print(os.path.dirname(infinigen.__file__))')/../blender/blender" ]]; then
-    BLENDER_BIN="$(python3 -c 'import infinigen; import os; print(os.path.dirname(infinigen.__file__))')/../blender/blender"
-  else
-    # Try the infinigen launcher
-    BLENDER_BIN="python -m infinigen.launch_blender"
-  fi
-
-  # Run the export script inside Blender's Python
-  $BLENDER_BIN \
-    --background \
-    --python "${SCRIPT_DIR}/export_gltf.py" \
-    -- \
+  # bpy (pip module) sometimes segfaults on clean-up after a successful export on macOS.
+  # Treat a non-zero exit as a warning if the manifest was written; abort if not.
+  $PYTHON "${SCRIPT_DIR}/export_gltf.py" \
     --blend "${COARSE_DIR}/scene.blend" \
     --output-dir "$OBJECTS_DIR" \
     --manifest "${OUTPUT_DIR}/manifest.json" \
     --texture-resolution "$TEX_RES" \
     --decimate-ratio "$DECIMATE" \
     --seed "$SEED" \
-    --room-type "$ROOM_TYPE"
+    --room-type "$ROOM_TYPE" || {
+    EXIT_CODE=$?
+    if [[ -f "${OUTPUT_DIR}/manifest.json" ]]; then
+      echo "  ⚠  export_gltf.py exited with code ${EXIT_CODE} (likely bpy shutdown segfault) but manifest exists — continuing"
+    else
+      echo "  ✗  export_gltf.py failed (exit ${EXIT_CODE}) and no manifest found"
+      exit 1
+    fi
+  }
 
   echo "  ✓ Objects exported to: ${OBJECTS_DIR}/"
   echo "  ✓ Manifest: ${OUTPUT_DIR}/manifest.json"
@@ -201,7 +202,7 @@ if [[ "$SKIP_AFRAME" == "false" ]]; then
   echo ""
   echo "▸ Stage 3: Building A-Frame scene..."
 
-  python3 "${SCRIPT_DIR}/build_aframe.py" \
+  $PYTHON "${SCRIPT_DIR}/build_aframe.py" \
     --manifest "${OUTPUT_DIR}/manifest.json" \
     --template "${HARNESS_ROOT}/templates/aframe.html.j2" \
     --output "${OUTPUT_DIR}/index.html"
@@ -212,6 +213,6 @@ fi
 echo ""
 echo "════════════════════════════════════════════════════════════════"
 echo "  Done! Serve with:"
-echo "    cd ${OUTPUT_DIR} && python -m http.server 8000"
+echo "    python -m http.server 8000 --directory ${OUTPUT_DIR}"
 echo "    Open http://localhost:8000/index.html"
 echo "════════════════════════════════════════════════════════════════"

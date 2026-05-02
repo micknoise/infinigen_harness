@@ -7,8 +7,8 @@
   "solve_steps_large": 50,
   "solve_steps_small": 50,
   "restrict_parent": [],
-  "restrict_child_primary": ["KitchenCounter", "KitchenIsland", "Seating", "DiningTable", "Lighting"],
-  "restrict_child_secondary": ["Sink", "Oven", "Microwave", "Utensils", "FoodItem", "Vase"],
+  "restrict_child_primary": ["KitchenCounter", "Seating", "Table", "Lighting"],
+  "restrict_child_secondary": ["Sink", "KitchenAppliance", "Utensils", "Cookware", "Dishware"],
   "extra_gin": [],
   "export": {
     "texture_resolution": 512,

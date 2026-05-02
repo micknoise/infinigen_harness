@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Infinigen Scene — Kitchen (seed 7412)</title>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7/dist/aframe-extras.min.js"></script>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    #info-panel {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      z-index: 1000;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="info-panel">
+    Kitchen | seed 7412 | 92 objects<br>
+    WASD to move · Mouse to look · Click to lock pointer
+  </div>
+
+  <a-scene
+    renderer="colorManagement: true; physicallyCorrectLights: true"
+    background="color: #1a1a2e"
+    vr-mode-ui="enabled: true"
+  >
+    <!-- Preload all object GLBs -->
+    <a-assets timeout="30000">
+      
+      <a-asset-item id="bathroom_0_0"
+                    src="objects/bathroom_0_0.glb"></a-asset-item>
+      
+      <a-asset-item id="bathroom_0_0.ceiling"
+                    src="objects/bathroom_0_0.ceiling.glb"></a-asset-item>
+      
+      <a-asset-item id="bathroom_0_0.exterior"
+                    src="objects/bathroom_0_0.exterior.glb"></a-asset-item>
+      
+      <a-asset-item id="bathroom_0_0.floor"
+                    src="objects/bathroom_0_0.floor.glb"></a-asset-item>
+      
+      <a-asset-item id="bathroom_0_0.meshed"
+                    src="objects/bathroom_0_0.meshed.glb"></a-asset-item>
+      
+      <a-asset-item id="bathroom_0_0.wall"
+                    src="objects/bathroom_0_0.wall.glb"></a-asset-item>
+      
+      <a-asset-item id="bedroom_0_0"
+                    src="objects/bedroom_0_0.glb"></a-asset-item>
+      
+      <a-asset-item id="bedroom_0_0.ceiling"
+                    src="objects/bedroom_0_0.ceiling.glb"></a-asset-item>
+      
+      <a-asset-item id="bedroom_0_0.exterior"
+                    src="objects/bedroom_0_0.exterior.glb"></a-asset-item>
+      
+      <a-asset-item id="bedroom_0_0.floor"
+                    src="objects/bedroom_0_0.floor.glb"></a-asset-item>
+      
+      <a-asset-item id="bedroom_0_0.meshed"
+                    src="objects/bedroom_0_0.meshed.glb"></a-asset-item>
+      
+      <a-asset-item id="bedroom_0_0.wall"
+                    src="objects/bedroom_0_0.wall.glb"></a-asset-item>
+      
+      <a-asset-item id="BézierCurve"
+                    src="objects/BézierCurve.glb"></a-asset-item>
+      
+      <a-asset-item id="BézierCurve.001"
+                    src="objects/BézierCurve.001.glb"></a-asset-item>
+      
+      <a-asset-item id="BézierCurve.002"
+                    src="objects/BézierCurve.002.glb"></a-asset-item>
+      
+      <a-asset-item id="BézierCurve.003"
+                    src="objects/BézierCurve.003.glb"></a-asset-item>
+      
+      <a-asset-item id="BézierCurve.004"
+                    src="objects/BézierCurve.004.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube"
+                    src="objects/Cube.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.001"
+                    src="objects/Cube.001.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.002"
+                    src="objects/Cube.002.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.003"
+                    src="objects/Cube.003.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.004"
+                    src="objects/Cube.004.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.005"
+                    src="objects/Cube.005.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.006"
+                    src="objects/Cube.006.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.007"
+                    src="objects/Cube.007.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.008"
+                    src="objects/Cube.008.glb"></a-asset-item>
+      
+      <a-asset-item id="Cube.009"
+                    src="objects/Cube.009.glb"></a-asset-item>
+      
+      <a-asset-item id="dining-room_0_0"
+                    src="objects/dining-room_0_0.glb"></a-asset-item>
+      
+      <a-asset-item id="dining-room_0_0.ceiling"
+                    src="objects/dining-room_0_0.ceiling.glb"></a-asset-item>
+      
+      <a-asset-item id="dining-room_0_0.exterior"
+                    src="objects/dining-room_0_0.exterior.glb"></a-asset-item>
+      
+      <a-asset-item id="dining-room_0_0.floor"
+                    src="objects/dining-room_0_0.floor.glb"></a-asset-item>
+      
+      <a-asset-item id="dining-room_0_0.meshed"
+                    src="objects/dining-room_0_0.meshed.glb"></a-asset-item>
+      
+      <a-asset-item id="dining-room_0_0.wall"
+                    src="objects/dining-room_0_0.wall.glb"></a-asset-item>
+      
+      <a-asset-item id="door"
+                    src="objects/door.glb"></a-asset-item>
+      
+      <a-asset-item id="door.001"
+                    src="objects/door.001.glb"></a-asset-item>
+      
+      <a-asset-item id="door.002"
+                    src="objects/door.002.glb"></a-asset-item>
+      
+      <a-asset-item id="door.003"
+                    src="objects/door.003.glb"></a-asset-item>
+      
+      <a-asset-item id="entrance"
+                    src="objects/entrance.glb"></a-asset-item>
+      
+      <a-asset-item id="kitchen_0_0"
+                    src="objects/kitchen_0_0.glb"></a-asset-item>
+      
+      <a-asset-item id="kitchen_0_0.ceiling"
+                    src="objects/kitchen_0_0.ceiling.glb"></a-asset-item>
+      
+      <a-asset-item id="kitchen_0_0.exterior"
+                    src="objects/kitchen_0_0.exterior.glb"></a-asset-item>
+      
+      <a-asset-item id="kitchen_0_0.floor"
+                    src="objects/kitchen_0_0.floor.glb"></a-asset-item>
+      
+      <a-asset-item id="kitchen_0_0.meshed"
+                    src="objects/kitchen_0_0.meshed.glb"></a-asset-item>
+      
+      <a-asset-item id="kitchen_0_0.wall"
+                    src="objects/kitchen_0_0.wall.glb"></a-asset-item>
+      
+      <a-asset-item id="living-room_0_0"
+                    src="objects/living-room_0_0.glb"></a-asset-item>
+      
+      <a-asset-item id="living-room_0_0.ceiling"
+                    src="objects/living-room_0_0.ceiling.glb"></a-asset-item>
+      
+      <a-asset-item id="living-room_0_0.exterior"
+                    src="objects/living-room_0_0.exterior.glb"></a-asset-item>
+      
+      <a-asset-item id="living-room_0_0.floor"
+                    src="objects/living-room_0_0.floor.glb"></a-asset-item>
+      
+      <a-asset-item id="living-room_0_0.meshed"
+                    src="objects/living-room_0_0.meshed.glb"></a-asset-item>
+      
+      <a-asset-item id="living-room_0_0.wall"
+                    src="objects/living-room_0_0.wall.glb"></a-asset-item>
+      
+      <a-asset-item id="PanelDoorFactory(5140517).spawn_asset(3)"
+                    src="objects/PanelDoorFactory5140517.spawn_asset3.glb"></a-asset-item>
+      
+      <a-asset-item id="PanelDoorFactory(5447300).spawn_asset(0)"
+                    src="objects/PanelDoorFactory5447300.spawn_asset0.glb"></a-asset-item>
+      
+      <a-asset-item id="PanelDoorFactory(5447300).spawn_asset(1)"
+                    src="objects/PanelDoorFactory5447300.spawn_asset1.glb"></a-asset-item>
+      
+      <a-asset-item id="PanelDoorFactory(5447300).spawn_asset(2)"
+                    src="objects/PanelDoorFactory5447300.spawn_asset2.glb"></a-asset-item>
+      
+      <a-asset-item id="PanelDoorFactory(5447300).spawn_asset(4)"
+                    src="objects/PanelDoorFactory5447300.spawn_asset4.glb"></a-asset-item>
+      
+      <a-asset-item id="Plane"
+                    src="objects/Plane.glb"></a-asset-item>
+      
+      <a-asset-item id="Plane.001"
+                    src="objects/Plane.001.glb"></a-asset-item>
+      
+      <a-asset-item id="Plane.002"
+                    src="objects/Plane.002.glb"></a-asset-item>
+      
+      <a-asset-item id="Plane.003"
+                    src="objects/Plane.003.glb"></a-asset-item>
+      
+      <a-asset-item id="Plane.004"
+                    src="objects/Plane.004.glb"></a-asset-item>
+      
+      <a-asset-item id="window"
+                    src="objects/window.glb"></a-asset-item>
+      
+      <a-asset-item id="window.001"
+                    src="objects/window.001.glb"></a-asset-item>
+      
+      <a-asset-item id="window.002"
+                    src="objects/window.002.glb"></a-asset-item>
+      
+      <a-asset-item id="window.003"
+                    src="objects/window.003.glb"></a-asset-item>
+      
+      <a-asset-item id="window.004"
+                    src="objects/window.004.glb"></a-asset-item>
+      
+      <a-asset-item id="window.005"
+                    src="objects/window.005.glb"></a-asset-item>
+      
+      <a-asset-item id="window.006"
+                    src="objects/window.006.glb"></a-asset-item>
+      
+      <a-asset-item id="window.007"
+                    src="objects/window.007.glb"></a-asset-item>
+      
+      <a-asset-item id="window.008"
+                    src="objects/window.008.glb"></a-asset-item>
+      
+      <a-asset-item id="window.009"
+                    src="objects/window.009.glb"></a-asset-item>
+      
+      <a-asset-item id="window.010"
+                    src="objects/window.010.glb"></a-asset-item>
+      
+      <a-asset-item id="window.011"
+                    src="objects/window.011.glb"></a-asset-item>
+      
+      <a-asset-item id="window.012"
+                    src="objects/window.012.glb"></a-asset-item>
+      
+      <a-asset-item id="window.013"
+                    src="objects/window.013.glb"></a-asset-item>
+      
+      <a-asset-item id="window.014"
+                    src="objects/window.014.glb"></a-asset-item>
+      
+      <a-asset-item id="window.015"
+                    src="objects/window.015.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(65507).spawn_asset(0)"
+                    src="objects/WindowFactory65507.spawn_asset0.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(65507).spawn_asset(1)"
+                    src="objects/WindowFactory65507.spawn_asset1.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(65507).spawn_asset(2)"
+                    src="objects/WindowFactory65507.spawn_asset2.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(65507).spawn_asset(3)"
+                    src="objects/WindowFactory65507.spawn_asset3.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(65507).spawn_asset(8)"
+                    src="objects/WindowFactory65507.spawn_asset8.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(65507).spawn_asset(9)"
+                    src="objects/WindowFactory65507.spawn_asset9.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(10)"
+                    src="objects/WindowFactory73448.spawn_asset10.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(11)"
+                    src="objects/WindowFactory73448.spawn_asset11.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(12)"
+                    src="objects/WindowFactory73448.spawn_asset12.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(13)"
+                    src="objects/WindowFactory73448.spawn_asset13.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(14)"
+                    src="objects/WindowFactory73448.spawn_asset14.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(15)"
+                    src="objects/WindowFactory73448.spawn_asset15.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(4)"
+                    src="objects/WindowFactory73448.spawn_asset4.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(5)"
+                    src="objects/WindowFactory73448.spawn_asset5.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(6)"
+                    src="objects/WindowFactory73448.spawn_asset6.glb"></a-asset-item>
+      
+      <a-asset-item id="WindowFactory(73448).spawn_asset(7)"
+                    src="objects/WindowFactory73448.spawn_asset7.glb"></a-asset-item>
+      
+    </a-assets>
+
+    <!-- Scene objects by category -->
+    
+    
+    <!-- Object -->
+    
+    <a-entity
+      id="bathroom_0_0"
+      gltf-model="#bathroom_0_0"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="bathroom_0_0.exterior"
+      gltf-model="#bathroom_0_0.exterior"
+      position="2.6024 1.6517 -4.9278"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="bathroom_0_0.meshed"
+      gltf-model="#bathroom_0_0.meshed"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="BézierCurve"
+      gltf-model="#BézierCurve"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="BézierCurve.001"
+      gltf-model="#BézierCurve.001"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="BézierCurve.002"
+      gltf-model="#BézierCurve.002"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="BézierCurve.003"
+      gltf-model="#BézierCurve.003"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="BézierCurve.004"
+      gltf-model="#BézierCurve.004"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube"
+      gltf-model="#Cube"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.001"
+      gltf-model="#Cube.001"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.002"
+      gltf-model="#Cube.002"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.003"
+      gltf-model="#Cube.003"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.004"
+      gltf-model="#Cube.004"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.005"
+      gltf-model="#Cube.005"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.006"
+      gltf-model="#Cube.006"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.007"
+      gltf-model="#Cube.007"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.008"
+      gltf-model="#Cube.008"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Cube.009"
+      gltf-model="#Cube.009"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="dining-room_0_0"
+      gltf-model="#dining-room_0_0"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="dining-room_0_0.exterior"
+      gltf-model="#dining-room_0_0.exterior"
+      position="14.4223 1.6431 -5.8145"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="dining-room_0_0.meshed"
+      gltf-model="#dining-room_0_0.meshed"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="entrance"
+      gltf-model="#entrance"
+      position="1.5 1.2915 -9.4658"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="kitchen_0_0"
+      gltf-model="#kitchen_0_0"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="kitchen_0_0.exterior"
+      gltf-model="#kitchen_0_0.exterior"
+      position="8.9136 1.6692 -3.2685"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="kitchen_0_0.meshed"
+      gltf-model="#kitchen_0_0.meshed"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="living-room_0_0"
+      gltf-model="#living-room_0_0"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="living-room_0_0.exterior"
+      gltf-model="#living-room_0_0.exterior"
+      position="8.4805 1.5857 -9.6412"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="living-room_0_0.meshed"
+      gltf-model="#living-room_0_0.meshed"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Plane"
+      gltf-model="#Plane"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Plane.001"
+      gltf-model="#Plane.001"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Plane.002"
+      gltf-model="#Plane.002"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Plane.003"
+      gltf-model="#Plane.003"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+    <a-entity
+      id="Plane.004"
+      gltf-model="#Plane.004"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Object"
+    ></a-entity>
+    
+
+    
+    <!-- Architecture -->
+    
+    <a-entity
+      id="bathroom_0_0.ceiling"
+      gltf-model="#bathroom_0_0.ceiling"
+      position="2.9182 3.0259 -4.7707"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="bathroom_0_0.floor"
+      gltf-model="#bathroom_0_0.floor"
+      position="3.0098 0.1294 -5.4811"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="bathroom_0_0.wall"
+      gltf-model="#bathroom_0_0.wall"
+      position="2.4982 1.7053 -4.9396"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="bedroom_0_0.ceiling"
+      gltf-model="#bedroom_0_0.ceiling"
+      position="7.2945 3.0247 -13.6698"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="bedroom_0_0.floor"
+      gltf-model="#bedroom_0_0.floor"
+      position="7.2764 0.1303 -13.173"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="bedroom_0_0.wall"
+      gltf-model="#bedroom_0_0.wall"
+      position="7.4036 1.7269 -14.4512"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="dining-room_0_0.ceiling"
+      gltf-model="#dining-room_0_0.ceiling"
+      position="14.0 3.0247 -5.75"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="dining-room_0_0.floor"
+      gltf-model="#dining-room_0_0.floor"
+      position="13.5627 0.1303 -6.1459"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="dining-room_0_0.wall"
+      gltf-model="#dining-room_0_0.wall"
+      position="14.5856 1.6994 -5.8053"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="door"
+      gltf-model="#door"
+      position="3.2334 1.2915 -7.5"
+      rotation="0.0 -180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="door.001"
+      gltf-model="#door.001"
+      position="7.1766 1.2915 -10.5"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="door.002"
+      gltf-model="#door.002"
+      position="11.5 1.2915 -5.6177"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="door.003"
+      gltf-model="#door.003"
+      position="14.0754 1.2915 -8.0"
+      rotation="0.0 -180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="kitchen_0_0.ceiling"
+      gltf-model="#kitchen_0_0.ceiling"
+      position="8.516 3.0253 -4.2366"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="kitchen_0_0.floor"
+      gltf-model="#kitchen_0_0.floor"
+      position="8.965 0.1298 -4.4553"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="kitchen_0_0.wall"
+      gltf-model="#kitchen_0_0.wall"
+      position="9.0452 1.7213 -2.8702"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="living-room_0_0.ceiling"
+      gltf-model="#living-room_0_0.ceiling"
+      position="8.3607 3.0254 -9.6082"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="living-room_0_0.floor"
+      gltf-model="#living-room_0_0.floor"
+      position="7.6363 0.1299 -9.3277"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="living-room_0_0.wall"
+      gltf-model="#living-room_0_0.wall"
+      position="8.4452 1.6351 -9.6855"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="PanelDoorFactory(5140517).spawn_asset(3)"
+      gltf-model="#PanelDoorFactory(5140517).spawn_asset(3)"
+      position="13.6627 0.1303 -7.8697"
+      rotation="0.0 172.81 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="PanelDoorFactory(5447300).spawn_asset(0)"
+      gltf-model="#PanelDoorFactory(5447300).spawn_asset(0)"
+      position="2.8207 0.1303 -7.3697"
+      rotation="0.0 164.92 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="PanelDoorFactory(5447300).spawn_asset(1)"
+      gltf-model="#PanelDoorFactory(5447300).spawn_asset(1)"
+      position="7.5893 0.1303 -10.6303"
+      rotation="0.0 -85.73 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="PanelDoorFactory(5447300).spawn_asset(2)"
+      gltf-model="#PanelDoorFactory(5447300).spawn_asset(2)"
+      position="11.3697 0.1303 -6.0304"
+      rotation="0.0 87.51 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="PanelDoorFactory(5447300).spawn_asset(4)"
+      gltf-model="#PanelDoorFactory(5447300).spawn_asset(4)"
+      position="1.3697 0.1303 -9.8785"
+      rotation="0.0 85.46 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window"
+      gltf-model="#window"
+      position="12.5 1.8792 -14.3559"
+      rotation="0.0 -90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.001"
+      gltf-model="#window.001"
+      position="9.9537 1.8792 -16.5"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.002"
+      gltf-model="#window.002"
+      position="4.9932 1.8792 -16.5"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.003"
+      gltf-model="#window.003"
+      position="2.5 1.8792 -14.5831"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.004"
+      gltf-model="#window.004"
+      position="5.9691 1.8792 -1.5"
+      rotation="0.0 -180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.005"
+      gltf-model="#window.005"
+      position="8.0 1.8792 -1.0111"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.006"
+      gltf-model="#window.006"
+      position="9.9796 1.8792 -0.5"
+      rotation="0.0 -180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.007"
+      gltf-model="#window.007"
+      position="12.1602 1.8792 -1.6602"
+      rotation="0.0 -135.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.008"
+      gltf-model="#window.008"
+      position="2.4101 1.8792 -2.5899"
+      rotation="0.0 135.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.009"
+      gltf-model="#window.009"
+      position="1.5 1.8792 -5.4204"
+      rotation="0.0 90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.010"
+      gltf-model="#window.010"
+      position="14.8472 1.8792 -3.5"
+      rotation="0.0 -180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.011"
+      gltf-model="#window.011"
+      position="16.5 1.8792 -5.4728"
+      rotation="0.0 -90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.012"
+      gltf-model="#window.012"
+      position="15.7755 1.8792 -8.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.013"
+      gltf-model="#window.013"
+      position="15.0 1.8792 -9.5027"
+      rotation="0.0 -90.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.014"
+      gltf-model="#window.014"
+      position="13.9283 1.8792 -11.5717"
+      rotation="0.0 -45.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="window.015"
+      gltf-model="#window.015"
+      position="1.9763 1.8792 -10.5"
+      rotation="0.0 -180.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(65507).spawn_asset(0)"
+      gltf-model="#WindowFactory(65507).spawn_asset(0)"
+      position="12.3697 1.8792 -14.3559"
+      rotation="-0.0 -90.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(65507).spawn_asset(1)"
+      gltf-model="#WindowFactory(65507).spawn_asset(1)"
+      position="9.9537 1.8792 -16.3697"
+      rotation="-0.0 -0.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(65507).spawn_asset(2)"
+      gltf-model="#WindowFactory(65507).spawn_asset(2)"
+      position="4.9932 1.8792 -16.3697"
+      rotation="-0.0 -0.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(65507).spawn_asset(3)"
+      gltf-model="#WindowFactory(65507).spawn_asset(3)"
+      position="2.6303 1.8792 -14.5831"
+      rotation="-0.0 90.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(65507).spawn_asset(8)"
+      gltf-model="#WindowFactory(65507).spawn_asset(8)"
+      position="2.5023 1.8792 -2.682"
+      rotation="180.0 -45.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(65507).spawn_asset(9)"
+      gltf-model="#WindowFactory(65507).spawn_asset(9)"
+      position="1.6303 1.8792 -5.4204"
+      rotation="-0.0 90.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(10)"
+      gltf-model="#WindowFactory(73448).spawn_asset(10)"
+      position="14.8472 1.8792 -3.6303"
+      rotation="180.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(11)"
+      gltf-model="#WindowFactory(73448).spawn_asset(11)"
+      position="16.3697 1.8792 -5.4728"
+      rotation="-0.0 -90.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(12)"
+      gltf-model="#WindowFactory(73448).spawn_asset(12)"
+      position="15.7755 1.8792 -7.8697"
+      rotation="-0.0 -0.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(13)"
+      gltf-model="#WindowFactory(73448).spawn_asset(13)"
+      position="14.8697 1.8792 -9.5027"
+      rotation="-0.0 -90.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(14)"
+      gltf-model="#WindowFactory(73448).spawn_asset(14)"
+      position="13.8362 1.8792 -11.4796"
+      rotation="-0.0 -45.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(15)"
+      gltf-model="#WindowFactory(73448).spawn_asset(15)"
+      position="1.9763 1.8792 -10.6303"
+      rotation="180.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(4)"
+      gltf-model="#WindowFactory(73448).spawn_asset(4)"
+      position="5.9691 1.8792 -1.6303"
+      rotation="180.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(5)"
+      gltf-model="#WindowFactory(73448).spawn_asset(5)"
+      position="8.1303 1.8792 -1.0111"
+      rotation="-0.0 90.0 180.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(6)"
+      gltf-model="#WindowFactory(73448).spawn_asset(6)"
+      position="9.9796 1.8792 -0.6303"
+      rotation="180.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+    <a-entity
+      id="WindowFactory(73448).spawn_asset(7)"
+      gltf-model="#WindowFactory(73448).spawn_asset(7)"
+      position="12.0681 1.8792 -1.7523"
+      rotation="180.0 45.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Architecture"
+    ></a-entity>
+    
+
+    
+    <!-- Furniture -->
+    
+    <a-entity
+      id="bedroom_0_0"
+      gltf-model="#bedroom_0_0"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Furniture"
+    ></a-entity>
+    
+    <a-entity
+      id="bedroom_0_0.exterior"
+      gltf-model="#bedroom_0_0.exterior"
+      position="7.3724 1.6744 -14.2147"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Furniture"
+    ></a-entity>
+    
+    <a-entity
+      id="bedroom_0_0.meshed"
+      gltf-model="#bedroom_0_0.meshed"
+      position="0.0 0.0 -0.0"
+      rotation="0.0 0.0 0.0"
+      scale="1.0 1.0 1.0"
+      data-category="Furniture"
+    ></a-entity>
+    
+
+    
+
+    <!-- Lighting -->
+    <a-entity light="type: ambient; color: #ffffff; intensity: 0.4"></a-entity>
+    <a-entity light="type: directional; color: #ffffff; intensity: 0.8"
+              position="2 4 1"
+              light="castShadow: true; shadowMapWidth: 2048; shadowMapHeight: 2048">
+    </a-entity>
+    <a-entity light="type: point; color: #ffeedd; intensity: 0.3; distance: 10"
+              position="0 2.5 0">
+    </a-entity>
+
+    <!-- Camera rig with WASD movement -->
+    <a-entity id="rig" position="0 1.6 3">
+      <a-entity camera
+                look-controls="pointerLockEnabled: true"
+                wasd-controls="acceleration: 20">
+      </a-entity>
+    </a-entity>
+  </a-scene>
+</body>
+</html>

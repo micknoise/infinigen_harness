@@ -2,47 +2,51 @@
   "room_types": {
     "DiningRoom": {
       "description": "Dining area with table and seating",
-      "typical_primary": ["DiningTable", "Seating", "Storage", "Lighting"],
-      "typical_secondary": ["Utensils", "Vase", "PlantContainer", "Lamp"],
+      "typical_primary": ["Table", "Seating", "Storage", "Lighting"],
+      "typical_secondary": ["Utensils", "Dishware", "Cookware"],
       "approx_cpu_time_minutes": 8
     },
     "Bathroom": {
       "description": "Bathroom with fixtures",
-      "typical_primary": ["Bathtub", "Toilet", "BathroomCounter", "Storage"],
-      "typical_secondary": ["Sink", "Bottle", "Lamp"],
+      "typical_primary": ["Bathing", "Sink", "Storage"],
+      "typical_secondary": ["BathroomItem"],
       "approx_cpu_time_minutes": 13
     },
     "Bedroom": {
       "description": "Sleeping area with bed and furniture",
-      "typical_primary": ["Bed", "Desk", "Wardrobe", "Shelf", "Seating", "Lighting"],
-      "typical_secondary": ["Lamp", "Book", "Monitor", "PlantContainer"],
+      "typical_primary": ["Bed", "Desk", "Storage", "Seating", "Lighting"],
+      "typical_secondary": ["TableDisplayItem", "ShelfTrinket"],
       "approx_cpu_time_minutes": 10
     },
     "Kitchen": {
       "description": "Kitchen with counters and appliances",
-      "typical_primary": ["KitchenCounter", "KitchenIsland", "Seating", "Table", "Lighting"],
-      "typical_secondary": ["Sink", "Oven", "Dishwasher", "Microwave", "Utensils", "FoodItem", "Bottle"],
+      "typical_primary": ["KitchenCounter", "Seating", "Table", "Lighting"],
+      "typical_secondary": ["Sink", "KitchenAppliance", "Utensils", "Cookware", "Dishware", "KitchenCounterItem"],
       "approx_cpu_time_minutes": 10
     },
     "LivingRoom": {
       "description": "Living/sitting area",
-      "typical_primary": ["Sofa", "TVStand", "Shelf", "Table", "Seating", "Lighting", "Storage"],
-      "typical_secondary": ["Lamp", "Book", "Vase", "PlantContainer", "Monitor"],
+      "typical_primary": ["LoungeSeating", "Table", "SideTable", "Seating", "Lighting", "Storage", "Watchable"],
+      "typical_secondary": ["TableDisplayItem", "ShelfTrinket", "HandheldItem"],
       "approx_cpu_time_minutes": 11
     }
   },
   "object_tags": {
+    "note": "These are the valid Semantics enum names from infinigen/core/tags.py",
     "primary": [
-      "Bed", "Desk", "Wardrobe", "Shelf", "KitchenCounter", "KitchenIsland",
-      "Bathtub", "Toilet", "BathroomCounter", "Sofa", "TVStand", "DiningTable",
-      "Storage", "Seating", "Table", "Lighting"
+      "Bed", "Desk", "Storage", "KitchenCounter", "KitchenAppliance",
+      "Bathing", "Sink", "LoungeSeating", "Seating", "LoungeSeating",
+      "Table", "SideTable", "Watchable", "Lighting", "CeilingLight",
+      "WallDecoration", "FloorMat"
     ],
     "secondary": [
-      "Sink", "Oven", "Dishwasher", "Microwave", "Monitor", "Lamp", "Book",
-      "Vase", "PlantContainer", "Utensils", "FoodItem", "Bottle"
+      "KitchenCounterItem", "KitchenAppliance", "Utensils", "Cookware",
+      "Dishware", "FoodPantryItem", "BathroomItem", "TableDisplayItem",
+      "ShelfTrinket", "HandheldItem", "Sink"
     ]
   },
   "gin_configs": {
+    "base_indoors.gin": "Base indoor scene config (always included automatically)",
     "fast_solve.gin": "Fewer solver steps, sacrifices quality for speed",
     "singleroom.gin": "Generate only a single room",
     "overhead.gin": "Overhead camera view",

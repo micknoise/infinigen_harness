@@ -1,0 +1,1939 @@
+{
+  "seed": 7412,
+  "room_type": "Kitchen",
+  "object_count": 92,
+  "objects": [
+    {
+      "name": "bathroom_0/0",
+      "file": "objects/bathroom_0_0.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 66
+    },
+    {
+      "name": "bathroom_0/0.ceiling",
+      "file": "objects/bathroom_0_0.ceiling.glb",
+      "position": [
+        2.9182,
+        3.0259,
+        -4.7707
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 20
+    },
+    {
+      "name": "bathroom_0/0.exterior",
+      "file": "objects/bathroom_0_0.exterior.glb",
+      "position": [
+        2.6024,
+        1.6517,
+        -4.9278
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 50
+    },
+    {
+      "name": "bathroom_0/0.floor",
+      "file": "objects/bathroom_0_0.floor.glb",
+      "position": [
+        3.0098,
+        0.1294,
+        -5.4811
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 26
+    },
+    {
+      "name": "bathroom_0/0.meshed",
+      "file": "objects/bathroom_0_0.meshed.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 132
+    },
+    {
+      "name": "bathroom_0/0.wall",
+      "file": "objects/bathroom_0_0.wall.glb",
+      "position": [
+        2.4982,
+        1.7053,
+        -4.9396
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 62
+    },
+    {
+      "name": "bedroom_0/0",
+      "file": "objects/bedroom_0_0.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Furniture",
+      "polygons": 130
+    },
+    {
+      "name": "bedroom_0/0.ceiling",
+      "file": "objects/bedroom_0_0.ceiling.glb",
+      "position": [
+        7.2945,
+        3.0247,
+        -13.6698
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 40
+    },
+    {
+      "name": "bedroom_0/0.exterior",
+      "file": "objects/bedroom_0_0.exterior.glb",
+      "position": [
+        7.3724,
+        1.6744,
+        -14.2147
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Furniture",
+      "polygons": 96
+    },
+    {
+      "name": "bedroom_0/0.floor",
+      "file": "objects/bedroom_0_0.floor.glb",
+      "position": [
+        7.2764,
+        0.1303,
+        -13.173
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 46
+    },
+    {
+      "name": "bedroom_0/0.meshed",
+      "file": "objects/bedroom_0_0.meshed.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Furniture",
+      "polygons": 244
+    },
+    {
+      "name": "bedroom_0/0.wall",
+      "file": "objects/bedroom_0_0.wall.glb",
+      "position": [
+        7.4036,
+        1.7269,
+        -14.4512
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 184
+    },
+    {
+      "name": "B\u00e9zierCurve",
+      "file": "objects/B\u00e9zierCurve.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 782
+    },
+    {
+      "name": "B\u00e9zierCurve.001",
+      "file": "objects/B\u00e9zierCurve.001.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 782
+    },
+    {
+      "name": "B\u00e9zierCurve.002",
+      "file": "objects/B\u00e9zierCurve.002.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 782
+    },
+    {
+      "name": "B\u00e9zierCurve.003",
+      "file": "objects/B\u00e9zierCurve.003.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 782
+    },
+    {
+      "name": "B\u00e9zierCurve.004",
+      "file": "objects/B\u00e9zierCurve.004.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 712
+    },
+    {
+      "name": "Cube",
+      "file": "objects/Cube.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 94
+    },
+    {
+      "name": "Cube.001",
+      "file": "objects/Cube.001.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 6
+    },
+    {
+      "name": "Cube.002",
+      "file": "objects/Cube.002.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 94
+    },
+    {
+      "name": "Cube.003",
+      "file": "objects/Cube.003.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 6
+    },
+    {
+      "name": "Cube.004",
+      "file": "objects/Cube.004.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 94
+    },
+    {
+      "name": "Cube.005",
+      "file": "objects/Cube.005.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 6
+    },
+    {
+      "name": "Cube.006",
+      "file": "objects/Cube.006.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 94
+    },
+    {
+      "name": "Cube.007",
+      "file": "objects/Cube.007.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 6
+    },
+    {
+      "name": "Cube.008",
+      "file": "objects/Cube.008.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 120
+    },
+    {
+      "name": "Cube.009",
+      "file": "objects/Cube.009.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 6
+    },
+    {
+      "name": "dining-room_0/0",
+      "file": "objects/dining-room_0_0.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 80
+    },
+    {
+      "name": "dining-room_0/0.ceiling",
+      "file": "objects/dining-room_0_0.ceiling.glb",
+      "position": [
+        14.0,
+        3.0247,
+        -5.75
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 24
+    },
+    {
+      "name": "dining-room_0/0.exterior",
+      "file": "objects/dining-room_0_0.exterior.glb",
+      "position": [
+        14.4223,
+        1.6431,
+        -5.8145
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 68
+    },
+    {
+      "name": "dining-room_0/0.floor",
+      "file": "objects/dining-room_0_0.floor.glb",
+      "position": [
+        13.5627,
+        0.1303,
+        -6.1459
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 36
+    },
+    {
+      "name": "dining-room_0/0.meshed",
+      "file": "objects/dining-room_0_0.meshed.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 184
+    },
+    {
+      "name": "dining-room_0/0.wall",
+      "file": "objects/dining-room_0_0.wall.glb",
+      "position": [
+        14.5856,
+        1.6994,
+        -5.8053
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 141
+    },
+    {
+      "name": "door",
+      "file": "objects/door.glb",
+      "position": [
+        3.2334,
+        1.2915,
+        -7.5
+      ],
+      "rotation": [
+        0.0,
+        -180.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "door.001",
+      "file": "objects/door.001.glb",
+      "position": [
+        7.1766,
+        1.2915,
+        -10.5
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "door.002",
+      "file": "objects/door.002.glb",
+      "position": [
+        11.5,
+        1.2915,
+        -5.6177
+      ],
+      "rotation": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "door.003",
+      "file": "objects/door.003.glb",
+      "position": [
+        14.0754,
+        1.2915,
+        -8.0
+      ],
+      "rotation": [
+        0.0,
+        -180.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "entrance",
+      "file": "objects/entrance.glb",
+      "position": [
+        1.5,
+        1.2915,
+        -9.4658
+      ],
+      "rotation": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 12
+    },
+    {
+      "name": "kitchen_0/0",
+      "file": "objects/kitchen_0_0.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 136
+    },
+    {
+      "name": "kitchen_0/0.ceiling",
+      "file": "objects/kitchen_0_0.ceiling.glb",
+      "position": [
+        8.516,
+        3.0253,
+        -4.2366
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 42
+    },
+    {
+      "name": "kitchen_0/0.exterior",
+      "file": "objects/kitchen_0_0.exterior.glb",
+      "position": [
+        8.9136,
+        1.6692,
+        -3.2685
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 97
+    },
+    {
+      "name": "kitchen_0/0.floor",
+      "file": "objects/kitchen_0_0.floor.glb",
+      "position": [
+        8.965,
+        0.1298,
+        -4.4553
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 48
+    },
+    {
+      "name": "kitchen_0/0.meshed",
+      "file": "objects/kitchen_0_0.meshed.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 248
+    },
+    {
+      "name": "kitchen_0/0.wall",
+      "file": "objects/kitchen_0_0.wall.glb",
+      "position": [
+        9.0452,
+        1.7213,
+        -2.8702
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 113
+    },
+    {
+      "name": "living-room_0/0",
+      "file": "objects/living-room_0_0.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 152
+    },
+    {
+      "name": "living-room_0/0.ceiling",
+      "file": "objects/living-room_0_0.ceiling.glb",
+      "position": [
+        8.3607,
+        3.0254,
+        -9.6082
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 47
+    },
+    {
+      "name": "living-room_0/0.exterior",
+      "file": "objects/living-room_0_0.exterior.glb",
+      "position": [
+        8.4805,
+        1.5857,
+        -9.6412
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 112
+    },
+    {
+      "name": "living-room_0/0.floor",
+      "file": "objects/living-room_0_0.floor.glb",
+      "position": [
+        7.6363,
+        0.1299,
+        -9.3277
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 71
+    },
+    {
+      "name": "living-room_0/0.meshed",
+      "file": "objects/living-room_0_0.meshed.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 290
+    },
+    {
+      "name": "living-room_0/0.wall",
+      "file": "objects/living-room_0_0.wall.glb",
+      "position": [
+        8.4452,
+        1.6351,
+        -9.6855
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 130
+    },
+    {
+      "name": "PanelDoorFactory(5140517).spawn_asset(3)",
+      "file": "objects/PanelDoorFactory5140517.spawn_asset3.glb",
+      "position": [
+        13.6627,
+        0.1303,
+        -7.8697
+      ],
+      "rotation": [
+        0.0,
+        172.81,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 3134
+    },
+    {
+      "name": "PanelDoorFactory(5447300).spawn_asset(0)",
+      "file": "objects/PanelDoorFactory5447300.spawn_asset0.glb",
+      "position": [
+        2.8207,
+        0.1303,
+        -7.3697
+      ],
+      "rotation": [
+        0.0,
+        164.92,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 3318
+    },
+    {
+      "name": "PanelDoorFactory(5447300).spawn_asset(1)",
+      "file": "objects/PanelDoorFactory5447300.spawn_asset1.glb",
+      "position": [
+        7.5893,
+        0.1303,
+        -10.6303
+      ],
+      "rotation": [
+        0.0,
+        -85.73,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 3318
+    },
+    {
+      "name": "PanelDoorFactory(5447300).spawn_asset(2)",
+      "file": "objects/PanelDoorFactory5447300.spawn_asset2.glb",
+      "position": [
+        11.3697,
+        0.1303,
+        -6.0304
+      ],
+      "rotation": [
+        0.0,
+        87.51,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 3318
+    },
+    {
+      "name": "PanelDoorFactory(5447300).spawn_asset(4)",
+      "file": "objects/PanelDoorFactory5447300.spawn_asset4.glb",
+      "position": [
+        1.3697,
+        0.1303,
+        -9.8785
+      ],
+      "rotation": [
+        0.0,
+        85.46,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 3318
+    },
+    {
+      "name": "Plane",
+      "file": "objects/Plane.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 56
+    },
+    {
+      "name": "Plane.001",
+      "file": "objects/Plane.001.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 56
+    },
+    {
+      "name": "Plane.002",
+      "file": "objects/Plane.002.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 56
+    },
+    {
+      "name": "Plane.003",
+      "file": "objects/Plane.003.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 56
+    },
+    {
+      "name": "Plane.004",
+      "file": "objects/Plane.004.glb",
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Object",
+      "polygons": 56
+    },
+    {
+      "name": "window",
+      "file": "objects/window.glb",
+      "position": [
+        12.5,
+        1.8792,
+        -14.3559
+      ],
+      "rotation": [
+        0.0,
+        -90.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.001",
+      "file": "objects/window.001.glb",
+      "position": [
+        9.9537,
+        1.8792,
+        -16.5
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.002",
+      "file": "objects/window.002.glb",
+      "position": [
+        4.9932,
+        1.8792,
+        -16.5
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.003",
+      "file": "objects/window.003.glb",
+      "position": [
+        2.5,
+        1.8792,
+        -14.5831
+      ],
+      "rotation": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.004",
+      "file": "objects/window.004.glb",
+      "position": [
+        5.9691,
+        1.8792,
+        -1.5
+      ],
+      "rotation": [
+        0.0,
+        -180.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.005",
+      "file": "objects/window.005.glb",
+      "position": [
+        8.0,
+        1.8792,
+        -1.0111
+      ],
+      "rotation": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.006",
+      "file": "objects/window.006.glb",
+      "position": [
+        9.9796,
+        1.8792,
+        -0.5
+      ],
+      "rotation": [
+        0.0,
+        -180.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.007",
+      "file": "objects/window.007.glb",
+      "position": [
+        12.1602,
+        1.8792,
+        -1.6602
+      ],
+      "rotation": [
+        0.0,
+        -135.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.008",
+      "file": "objects/window.008.glb",
+      "position": [
+        2.4101,
+        1.8792,
+        -2.5899
+      ],
+      "rotation": [
+        0.0,
+        135.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.009",
+      "file": "objects/window.009.glb",
+      "position": [
+        1.5,
+        1.8792,
+        -5.4204
+      ],
+      "rotation": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.010",
+      "file": "objects/window.010.glb",
+      "position": [
+        14.8472,
+        1.8792,
+        -3.5
+      ],
+      "rotation": [
+        0.0,
+        -180.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.011",
+      "file": "objects/window.011.glb",
+      "position": [
+        16.5,
+        1.8792,
+        -5.4728
+      ],
+      "rotation": [
+        0.0,
+        -90.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.012",
+      "file": "objects/window.012.glb",
+      "position": [
+        15.7755,
+        1.8792,
+        -8.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.013",
+      "file": "objects/window.013.glb",
+      "position": [
+        15.0,
+        1.8792,
+        -9.5027
+      ],
+      "rotation": [
+        0.0,
+        -90.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.014",
+      "file": "objects/window.014.glb",
+      "position": [
+        13.9283,
+        1.8792,
+        -11.5717
+      ],
+      "rotation": [
+        0.0,
+        -45.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "window.015",
+      "file": "objects/window.015.glb",
+      "position": [
+        1.9763,
+        1.8792,
+        -10.5
+      ],
+      "rotation": [
+        0.0,
+        -180.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 12
+    },
+    {
+      "name": "WindowFactory(65507).spawn_asset(0)",
+      "file": "objects/WindowFactory65507.spawn_asset0.glb",
+      "position": [
+        12.3697,
+        1.8792,
+        -14.3559
+      ],
+      "rotation": [
+        -0.0,
+        -90.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 4642
+    },
+    {
+      "name": "WindowFactory(65507).spawn_asset(1)",
+      "file": "objects/WindowFactory65507.spawn_asset1.glb",
+      "position": [
+        9.9537,
+        1.8792,
+        -16.3697
+      ],
+      "rotation": [
+        -0.0,
+        -0.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 332
+    },
+    {
+      "name": "WindowFactory(65507).spawn_asset(2)",
+      "file": "objects/WindowFactory65507.spawn_asset2.glb",
+      "position": [
+        4.9932,
+        1.8792,
+        -16.3697
+      ],
+      "rotation": [
+        -0.0,
+        -0.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 5813
+    },
+    {
+      "name": "WindowFactory(65507).spawn_asset(3)",
+      "file": "objects/WindowFactory65507.spawn_asset3.glb",
+      "position": [
+        2.6303,
+        1.8792,
+        -14.5831
+      ],
+      "rotation": [
+        -0.0,
+        90.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 106
+    },
+    {
+      "name": "WindowFactory(65507).spawn_asset(8)",
+      "file": "objects/WindowFactory65507.spawn_asset8.glb",
+      "position": [
+        2.5023,
+        1.8792,
+        -2.682
+      ],
+      "rotation": [
+        180.0,
+        -45.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 100
+    },
+    {
+      "name": "WindowFactory(65507).spawn_asset(9)",
+      "file": "objects/WindowFactory65507.spawn_asset9.glb",
+      "position": [
+        1.6303,
+        1.8792,
+        -5.4204
+      ],
+      "rotation": [
+        -0.0,
+        90.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 168
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(10)",
+      "file": "objects/WindowFactory73448.spawn_asset10.glb",
+      "position": [
+        14.8472,
+        1.8792,
+        -3.6303
+      ],
+      "rotation": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 5609
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(11)",
+      "file": "objects/WindowFactory73448.spawn_asset11.glb",
+      "position": [
+        16.3697,
+        1.8792,
+        -5.4728
+      ],
+      "rotation": [
+        -0.0,
+        -90.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 1142
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(12)",
+      "file": "objects/WindowFactory73448.spawn_asset12.glb",
+      "position": [
+        15.7755,
+        1.8792,
+        -7.8697
+      ],
+      "rotation": [
+        -0.0,
+        -0.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 5121
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(13)",
+      "file": "objects/WindowFactory73448.spawn_asset13.glb",
+      "position": [
+        14.8697,
+        1.8792,
+        -9.5027
+      ],
+      "rotation": [
+        -0.0,
+        -90.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 94
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(14)",
+      "file": "objects/WindowFactory73448.spawn_asset14.glb",
+      "position": [
+        13.8362,
+        1.8792,
+        -11.4796
+      ],
+      "rotation": [
+        -0.0,
+        -45.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 94
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(15)",
+      "file": "objects/WindowFactory73448.spawn_asset15.glb",
+      "position": [
+        1.9763,
+        1.8792,
+        -10.6303
+      ],
+      "rotation": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 94
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(4)",
+      "file": "objects/WindowFactory73448.spawn_asset4.glb",
+      "position": [
+        5.9691,
+        1.8792,
+        -1.6303
+      ],
+      "rotation": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 1142
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(5)",
+      "file": "objects/WindowFactory73448.spawn_asset5.glb",
+      "position": [
+        8.1303,
+        1.8792,
+        -1.0111
+      ],
+      "rotation": [
+        -0.0,
+        90.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 94
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(6)",
+      "file": "objects/WindowFactory73448.spawn_asset6.glb",
+      "position": [
+        9.9796,
+        1.8792,
+        -0.6303
+      ],
+      "rotation": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 94
+    },
+    {
+      "name": "WindowFactory(73448).spawn_asset(7)",
+      "file": "objects/WindowFactory73448.spawn_asset7.glb",
+      "position": [
+        12.0681,
+        1.8792,
+        -1.7523
+      ],
+      "rotation": [
+        180.0,
+        45.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "category": "Architecture",
+      "polygons": 966
+    }
+  ]
+}

@@ -20,6 +20,8 @@ TEX_RES=1024
 DECIMATE=0.5
 SEED=0
 ROOM_TYPE="Unknown"
+CONDA_ENV="${CONDA_ENV:-infinigen}"
+PYTHON="conda run --no-capture-output -n ${CONDA_ENV} python"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -29,6 +31,7 @@ while [[ $# -gt 0 ]]; do
     --decimate-ratio)     DECIMATE="$2"; shift 2 ;;
     --seed)               SEED="$2"; shift 2 ;;
     --room-type)          ROOM_TYPE="$2"; shift 2 ;;
+    --conda-env)          CONDA_ENV="$2"; PYTHON="conda run --no-capture-output -n ${CONDA_ENV} python"; shift 2 ;;
     --help)
       echo "Usage: $0 --blend <scene.blend> --output <dir> [options]"
       exit 0 ;;
@@ -45,23 +48,12 @@ OBJECTS_DIR="${OUTPUT_DIR}/objects"
 mkdir -p "$OBJECTS_DIR"
 
 echo "▸ Exporting per-object glTF..."
-echo "  Blend: $BLEND_FILE"
-echo "  Output: $OBJECTS_DIR"
+echo "  Blend:    $BLEND_FILE"
+echo "  Output:   $OBJECTS_DIR"
 echo "  Textures: ${TEX_RES}x${TEX_RES}"
 echo "  Decimate: ${DECIMATE}"
 
-# Find blender
-BLENDER_BIN=""
-if command -v blender &>/dev/null; then
-  BLENDER_BIN="blender"
-else
-  BLENDER_BIN="python -m infinigen.launch_blender"
-fi
-
-$BLENDER_BIN \
-  --background \
-  --python "${SCRIPT_DIR}/export_gltf.py" \
-  -- \
+$PYTHON "${SCRIPT_DIR}/export_gltf.py" \
   --blend "$BLEND_FILE" \
   --output-dir "$OBJECTS_DIR" \
   --manifest "${OUTPUT_DIR}/manifest.json" \
@@ -73,11 +65,11 @@ $BLENDER_BIN \
 echo ""
 echo "▸ Building A-Frame scene..."
 
-python3 "${SCRIPT_DIR}/build_aframe.py" \
+$PYTHON "${SCRIPT_DIR}/build_aframe.py" \
   --manifest "${OUTPUT_DIR}/manifest.json" \
   --template "${HARNESS_ROOT}/templates/aframe.html.j2" \
   --output "${OUTPUT_DIR}/index.html"
 
 echo ""
 echo "✓ Done. Serve with:"
-echo "  cd ${OUTPUT_DIR} && python -m http.server 8000"
+echo "  python -m http.server 8000 --directory ${OUTPUT_DIR}"
